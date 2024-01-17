@@ -1,8 +1,8 @@
-FROM php:7.3.6-apache-stretch
+FROM php:apache
 LABEL maintainer="Tom Broughton <docker@tombroughton.me>"
 
 # see https://github.com/backdrop/backdrop/releases
-ARG BACKDROP_VERSION=1.13.2
+ARG BACKDROP_VERSION=1.26.1
 
 # this could be set to php.ini-production or php.ini-development
 ARG BACKDROP_PHP_INI="php.ini-development"
@@ -12,13 +12,16 @@ ARG BACKDROP_PHP_INI="php.ini-development"
 # and from the initialisation/install.php
 RUN apt-get update && \
     apt-get install -y curl \
-             mysql-client \
+         default-mysql-client \
+         libwebp-dev \
 	     libpng-dev \
 	     libjpeg-dev \
+         libfreetype-dev \
 	     zlib1g-dev \
-	     libzip-dev
+	     libzip-dev \
+         libonig-dev
 	     
-RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr
+RUN docker-php-ext-configure gd --with-jpeg --with-webp --with-freetype
 
 RUN docker-php-ext-install \
     mbstring \

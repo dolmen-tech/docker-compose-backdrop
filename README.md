@@ -131,20 +131,20 @@ stop/start/recreate containers without loosing the data.
 
 ### Backdrop directories ###
 
-  * files: ```/srv/www/backdrop/html/files```
+  * files: ```./shared/html/files```
     * The configs and site files are stored here
 	* apache has write access to this folder
 	* the files here are largely set up on installation
-  * sites: ```/srv/www/backdrop/html/sites```
+  * sites: ```./shared/html/sites```
     * This dir is used for [multisite configuration](https://github.com/backdrop/backdrop/tree/1.x/sites)
-  * layouts: ```/srv/www/backdrop/html/layouts```
+  * layouts: ```./shared/html/layouts```
     * bespoke layouts can be added for different content regions
 	* [Read about layouts in the backdrop docs](https://backdropcms.org/layouts)
-  * modules: ```/srv/www/backdrop/html/modules```
+  * modules: ```./shared/html/modules```
     * [dir to add downloaded modules to](https://backdropcms.org/modules)
 	  
 
 ### Mysql data directory ###
 
-The MySQL data will be stored in ```/srv/data/backdrop-db/```
+The MySQL data will be stored in ```./shared/db/```
 

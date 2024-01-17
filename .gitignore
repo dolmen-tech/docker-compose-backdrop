@@ -1,11 +1,5 @@
 \#*\#
 .env
 
-shared/db/
-shared/html/files/
-shared/html/layouts/
-shared/html/modules/
-shared/html/sites/
-shared/html/themes/
 
 !.gitkeep
